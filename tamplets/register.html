@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<style type="text/css">
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: white;
+        color: black;
+    }
+
+    .login-box {
+        position: absolute;
+        top: 3.5%;
+        left: 35%;
+        align-items: center;
+        width: 400px;
+        padding: 40px;
+        transform: translate (-50%, -50%);
+        background-image: linear-gradient(to right top, #27a9f4, #14fff1);
+        text-align: center;
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+
+    .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: black;
+        text-align: center;
+    }
+
+    .login-box .user-box {
+        position: relative;
+    }
+
+    .login-box .user-other {
+        position: relative;
+        padding-right: 48px;
+    }
+
+    .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background: transparent;
+    }
+
+    .login-box .user-other label {
+        color: black;
+    }
+
+    .login-box .user-other input {
+
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        /* border-bottom: 1px solid; */
+        outline: none;
+        background: transparent;
+    }
+
+    .login-box .user-box label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: black;
+        font-weight: 500;
+        letter-spacing: 1px;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+        left: 0;
+        top: -20px;
+        color: black;
+        font-size: 12px;
+    }
+
+    .login-box .user-other input:focus~label,
+    .login-box .user-other input:valid~label {
+        left: 0;
+        top: 0;
+        color: black;
+        font-size: 12px;
+    }
+
+    .login-box form button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: none;
+        border: none;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 2px;
+    }
+
+    .login-box button:hover {
+        background: rgba(109, 108, 108, 0.938);
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px silver,
+            0 0 25px silver,
+            0 0 50px silver,
+            0 0 100px silver;
+    }
+
+    .login-box button span {
+        position: absolute;
+        display: block;
+    }
+
+    .login-box button span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, 30f1fb);
+        animation: btn-anim1 1s linear infinite;
+    }
+
+    @keyframes btn-anim1 {
+        0% {
+            left: -100%;
+        }
+
+        50%,
+        100% {
+            left: 100%;
+        }
+    }
+
+    .login-box button span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgb(139, 137, 137));
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+        0% {
+            top: -100%;
+        }
+
+        50%,
+        100% {
+            top: 100%;
+        }
+    }
+
+    .login-box button span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, black);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s
+    }
+
+    @keyframes btn-anim3 {
+        0% {
+            right: -100%;
+        }
+
+        50%,
+        100% {
+            right: 100%;
+        }
+    }
+
+    .login-box button span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, black);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: .75s
+    }
+
+    @keyframes btn-anim4 {
+        0% {
+            bottom: -100%;
+        }
+
+        50%,
+        100% {
+            bottom: 100%;
+        }
+    }
+
+    #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+
+    <!-- <video autoplay muted loop id="background-video">
+        <source src="Silky_Blue_720P_Motion_Background_Loop.mp4" type="video/mp4">
+      </video> -->
+
+    <div class="login-box">
+        <h2>Sign Up</h2>
+        <form method="POST" action="/register">
+            {% csrf_token %}
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
+
+            <div class="user-other">
+                <label>Gender</label>
+                <input type="radio" value="male" id="male" name="gender" checked> Male
+                <input type="radio" value="female" id="female" name="gender"> Female
+                <input type="radio" value="other" id="other" name="gender"> Other
+            </div>
+
+            <div class="user-box">
+                <input type="number" name="phone" size="10" required>
+                <label for="">Phone</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="address" required>
+                <label for="">Address</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="email" required="">
+                <label>Email</label>
+            </div>
+
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Submit</button>
+            <a href="index.html">
+                <button type="button">Home</button> </a>
+            <!-- <script>
+        function myfunction(){
+            alert("Registration successfull")
+        }
+    </script> -->
+            <!-- <a href="">Submit</a> -->
+        </form>
+    </div>
+</body>
+
+</html>

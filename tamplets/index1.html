@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <title>Hackathon</title>
+    <style>
+      body {
+    position: relative;
+    margin: 20px 20px 20px 30px;
+    font-family: "Lexend Exa", sans-serif;
+}
+
+
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.header img {
+  margin-right: 75px;
+  height: 145px;
+  /* max-width: 110px; */
+}
+
+.header .user{
+    width: 70px;
+    height: 70px;
+    margin-top: 32px;
+    margin-left: 825px;
+}
+
+nav {
+  position: absolute;
+  top: 45px;
+  left: 750px;
+  transform: translateX(-50%);
+  display: inline-block;
+  /* border: 2px solid #EBECF1; */
+  /* border-radius: 30px; */
+  animation: slide-in 1s ease-out;
+  z-index: 2;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 30px;
+  list-style-type: none;
+  z-index: 2;
+}
+ul li:not(:last-child) {
+  margin-right: 80px;
+}
+ul li {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background 0.2s;
+  z-index: 2;
+}
+ul li a {
+  color: #003cff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  font-weight: 500;
+  font-size: 20px;
+  z-index: 2;
+}
+ul li ul {
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  display: block;
+  margin: 12px -12px;
+  padding: 0;
+  background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+  /* border: 2px solid #F7C833;
+  border-right: 2px solid #F89329;
+  border-bottom: 2px solid #F89329; */
+  border-radius: 12px;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+ul li ul li {
+  margin: -2px 0 0 -2px;
+  width: calc(100% - 20px);
+  line-height: 1.7;
+  z-index: 2;
+}
+ul li ul li a {
+  color: #ff0cc2;
+  z-index: 2;
+}
+ul li:hover {
+  background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+  border-radius: 40px;
+  z-index: 2;
+}
+
+ul li:hover a {
+  color: #000000;
+  font-size: 21px;
+  z-index: 2;
+}
+ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+}
+ul li:hover ul li a {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  z-index: 2;
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: 20px;
+  }
+  70% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+/* header nav ul li .a{
+  font-size: 10px;
+  margin: 0px;
+  padding: ;
+} */
+
+  * {box-sizing: border-box;}
+  body {font-family: Verdana, sans-serif;}
+  .mySlides {display: none;}
+  img {vertical-align: middle;}
+  
+  /* Slideshow container */
+  .slideshow-container {
+    width: 1300px;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    height: 250px;
+    left: -5px;
+  }
+
+  .slideshow-container img {
+    height: 170%;
+    object-fit: cover; /* This will ensure the aspect ratio of the image is maintained */
+}
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }  
+
+  .what h1{
+    margin-top: 140px;
+  }
+
+  .what marquee{
+    background-color: #d6d0d0;
+    color: rgb(0, 153, 255);
+    font-weight: bold;
+    height: 30px;
+    font-family: monospace;
+    font-size: 24px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card1, .card2, .card3, .card4 {
+    margin: 10px;
+  }
+
+  .card1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content1 .heading1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content1 .para1 {
+    line-height: 1.5;
+  }
+  
+  .content1 .btn1 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card1:hover::before {
+    height: 100%;
+  }
+  
+  .card1:hover {
+    box-shadow: none;
+  }
+  
+  .card1:hover .btn1 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content1 .btn1:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content1 .btn1:active {
+    box-shadow: none;
+  }
+  
+
+  .card2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content2 .heading2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content2 .para2 {
+    line-height: 1.5;
+  }
+  
+  .content2 .btn2 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card2:hover::before {
+    height: 100%;
+  }
+  
+  .card2:hover {
+    box-shadow: none;
+  }
+  
+  .card2:hover .btn2 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content2 .btn2:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content2 .btn2:active {
+    box-shadow: none;
+  }
+  
+
+  .card3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content3 .heading3 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content3 .para3 {
+    line-height: 1.5;
+  }
+  
+  .content3 .btn3 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card3:hover::before {
+    height: 100%;
+  }
+  
+  .card3:hover {
+    box-shadow: none;
+  }
+  
+  .card3:hover .btn3 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content3 .btn3:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content3 .btn3:active {
+    box-shadow: none;
+  }
+  
+
+  .card4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content4 .heading4 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .content4 .para4 {
+    line-height: 1.5;
+  }
+  
+  .content4 .btn4 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card4:hover::before {
+    height: 100%;
+  }
+  
+  .card4:hover {
+    box-shadow: none;
+  }
+  
+  .card4:hover .btn4 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content4 .btn4:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content4 .btn4:active {
+    box-shadow: none;
+  }
+  
+  .scheme {
+    margin-bottom: -20px;
+  }
+
+
+
+  .card-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card10, .card20, .card30, .card40 {
+    margin: 10px;
+    margin-bottom: 20px;
+  }
+
+  .card10 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content10 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content10 .heading10 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content10 .para10 {
+    line-height: 1.5;
+  }
+  
+  .content10 .btn10 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px; 
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card10::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card10:hover::before {
+    height: 100%;
+  }
+  
+  .card10:hover {
+    box-shadow: none;
+  }
+  
+  .card10:hover .btn10 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content10 .btn10:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content10 .btn10:active {
+    box-shadow: none;
+  }
+  
+
+  .card20 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content20 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content20 .heading20 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content20 .para20 {
+    line-height: 1.5;
+  }
+  
+  .content20 .btn20 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card20::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card20:hover::before {
+    height: 100%;
+  }
+  
+  .card20:hover {
+    box-shadow: none;
+  }
+  
+  .card20:hover .btn20 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content20 .btn20:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content20 .btn20:active {
+    box-shadow: none;
+  }
+  
+
+  .card30 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content30 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content30 .heading30 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .content30 .para30 {
+    line-height: 1.5;
+  }
+  
+  .content30 .btn30 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card30::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card30:hover::before {
+    height: 100%;
+  }
+  
+  .card30:hover {
+    box-shadow: none;
+  }
+  
+  .card30:hover .btn30 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content30 .btn30:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content30 .btn30:active {
+    box-shadow: none;
+  }
+  
+
+  .card40 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 430px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-top: 50px;
+  }
+  
+  .content40 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: black;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .content40 .heading40 {
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .content40 .para40 {
+    line-height: 1.5;
+  }
+  
+  .content40 .btn40 {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card40::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card40:hover::before {
+    height: 100%;
+  }
+  
+  .card40:hover {
+    box-shadow: none;
+  }
+  
+  .card40:hover .btn40 {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .content40 .btn40:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .content40 .btn40:active {
+    box-shadow: none;
+  }
+  
+  .scholarship {
+    margin-bottom: -20px;
+  }
+
+  .video-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    margin-top: 0px;
+  }
+
+  .video1, .video2, .video3 {
+    margin: 13px;
+  }
+  
+  .client-container{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .item img{
+    width: 100%;
+    height: auto;
+    border: 1px dashed #000;
+  }
+
+  .footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 15px 50px 25px 30px;
+  margin-top: 15px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+    </style>
+</head>
+<body>
+
+  <header>
+    <div class="header">
+        <img class="img" src="static\main-logo.jpeg" alt="Main Logo"> 
+        <img class="img" src="static\gov-guj.png" alt="Gov. of Gujarat">
+        <a href="profile"><img class="user" src="static\user.png" alt="Profile"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="about">About</a></li>
+        <li>
+          <a href="scheme-page">Scheme</a>
+          <ul>
+            <li><a  href="scheme01">ADIWASI VIKAS YOJANA</a></li>
+            <li><a  href="scheme02">ASHRAM SHALA</a></li>
+            <li><a  href="scheme03">EKLAVYA MODEL RESIDENTIAL SCHOOL</a></li>
+            <li><a  href="scheme04">TRIBAL DEVELOPMENT SCHEMES FOR WOMEN</a></li>
+            <li><a  href="scheme05">TRIBAL YOUTH HOSTEL</a></li>
+            <li><a  href="scheme06">VANBANDHU KALYAN YOJAN</a></li>
+            <li><a  href="scheme07">VAN DHAN VIKAS KENDRA</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="scholarship-page">Scholarship</a>
+          <ul>
+            <li><a href="scholarship1">GUJARAT STATE HANDICAPPED EDUCATION</a></li>
+            <li><a href="scholarship2">MYSY</a></li>
+            <li><a href="scholarship3">NATIONAL OVERSEAS SCHOLARSHIP</a></li>
+            <li><a href="scholarship4">POST MATRIC</a></li>
+            <li><a href="scholarship5">PRE MATRIC</a></li>
+  
+          </ul>
+        </li>
+        <li><a href="contact">Contact</a></li>
+        
+      </ul>
+      
+    </nav>
+
+    
+
+  </header>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://tribal.nic.in/images/Slider/P_3.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://tribal.nic.in/images/Slider/b4.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://cbpssubscriber.mygov.in/assets/uploads/juGajmc1gOVBUtt5?90?87" style="width:100%">
+        </div>
+        
+    </div>
+    <div class="what">
+        <h1>What's New</h1>
+        <marquee behavior="" direction="">The Chief Minister of Gujarat announced the Van Bandhu Kalyan Yojana (CM's Ten Point Program) to develop 43 ITDP Talukas in Gujarat.</marquee>
+    </div>
+
+    <h1 class="scheme">Schemes</h1>
+
+    <div class="card-container">
+
+    <div class="card1">
+      <div class="content1">
+        <p class="heading1">ADIWASI VIKAS YOJANA
+        </p><p class="para1">
+          Gujarat Adijati Vikas Corporation is a statutory corporation.
+        </p><a href="scheme01">
+        <button class="btn1">Read more</button></a>
+      </div>
+    </div>
+
+    <div class="card2">
+      <div class="content2">
+        <p class="heading2">ASHRAM SHALA
+        </p><p class="para2">
+          To provide schooling, boarding and lodging to Schedule Tribe (ST) students at a single location. <br><br>
+        </p><a href="scheme02">
+        <button class="btn2">Read more</button></a>
+      </div>
+    </div>
+
+    <div class="card3">
+      <div class="content3">
+        <p class="heading3">TRIBAL YOUTH HOSTEL
+        </p><p class="para3">
+          Youth Hosteling as a movement has not taken long to establish in the world.
+        </p><a href="scheme03">
+        <button class="btn3">Read more</button></a>
+      </div>
+    </div>
+
+    <div class="card4">
+      <div class="content4">
+        <p class="heading4">See All Schemes
+        </p><p class="para4">
+          
+        </p><a href="scheme-page">
+        <button class="btn4">See</button></a>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 class="scholarship">Scholarship</h1>
+    
+    <div class="card-container1">
+
+    <div class="card10">
+      <div class="content10">
+        <p class="heading10">MYSY
+        </p><p class="para10">
+          Mukhymantri Yuva Swavalamban Yojana or MYSY Scholarship is a scholarship scheme that is offered to the economically weaker section students of Gujarat. 
+        </p><a href="scholarship1">
+        <button class="btn10">Read more</button>
+      </a>
+      </div>
+    </div>
+
+    <div class="card20">
+      <div class="content20">
+        <p class="heading20">POST MATRIC
+        </p><p class="para20">
+          The Post-Matric Scholarship for SC/ST (Scheduled Caste/Scheduled Tribe) students is a government scholarship program in India.
+        </p><a href="scholarship2">
+        <button class="btn20">Read more</button></a>
+      </div>
+    </div>
+
+    <div class="card30">
+      <div class="content30">
+        <p class="heading30">PRE MATRIC
+        </p><p class="para30">
+          The Government of Gujarat provides Pre-Matric Scholarships for Scheduled Caste (SC) and Scheduled Tribe (ST) students in Gujarat.
+        </p><a href="scholarship3">
+        <button class="btn30">Read more</button></a>
+      </div>
+    </div>
+
+    <div class="card40">
+      <div class="content40">
+        <p class="heading40">See All Scholarships
+        </p><p class="para40">
+          
+        </p><a href="scholarship-page">
+        <button class="btn40">See</button></a>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <div class="video-container">
+    <iframe class="video1" width="400" height="225" src="https://www.youtube.com/embed/8wtOjNo8kBE?si=pkQN3lrv1FAjMas9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video1" width="400" height="225" src="https://www.youtube.com/embed/NJsMVSO5dD8?si=RNbjUCIKTNRyjOV5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video1" width="400" height="225" src="https://www.youtube.com/embed/F0saWrPgG1c?si=L5Ma0_EHGeNYN9xe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="">Home</a>
+
+        <a href="login">Login</a>
+
+        <a href="scheme-page">Scheme</a>
+
+        <a href="scholarship-page">Scholarship</a>
+
+        <a href="about">About</a>
+
+        <a href="contact">Contact / Feedback</a>
+      </p>
+
+      <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+    </div>
+
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+  <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+  </script>
+</body>
+</html>

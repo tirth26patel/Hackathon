@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="scholarship5.css"> -->
+  <style>
+    body {
+      position: relative;
+      margin: 20px 20px 20px 30px;
+      font-family: "Lexend Exa", sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .header img {
+      margin-right: 75px;
+      height: 145px;
+      /* max-width: 110px; */
+    }
+
+    .header .user {
+      width: 70px;
+      height: 70px;
+      margin-top: 32px;
+      margin-left: 825px;
+    }
+
+    nav {
+      position: absolute;
+      top: 45px;
+      left: 750px;
+      transform: translateX(-50%);
+      display: inline-block;
+      /* border: 2px solid #EBECF1; */
+      /* border-radius: 30px; */
+      animation: slide-in 1s ease-out;
+      z-index: 2;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0 30px;
+      list-style-type: none;
+    }
+
+    ul li:not(:last-child) {
+      margin-right: 80px;
+    }
+
+    ul li {
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.2s;
+    }
+
+    ul li a {
+      color: #003cff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0;
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+      /* border: 2px solid #F7C833;
+  border-right: 2px solid #F89329;
+  border-bottom: 2px solid #F89329; */
+      border-radius: 9px;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    ul li ul li {
+      margin: -2px 0 0 -2px;
+      width: calc(100% - 20px);
+      line-height: 1.7;
+    }
+
+    ul li ul li a {
+      color: #ff0cc2;
+    }
+
+    ul li:hover {
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+      border-radius: 40px;
+    }
+
+    ul li:hover a {
+      color: #000000;
+      font-size: 21px;
+    }
+
+    ul li:hover ul {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul li:hover ul li a {
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+    }
+
+    @keyframes slide-in {
+      0% {
+        top: -50px;
+      }
+
+      40% {
+        top: 20px;
+      }
+
+      70% {
+        top: 10px;
+      }
+
+      100% {
+        top: 15px;
+      }
+    }
+
+
+    .what h1 {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .what marquee {
+      background-color: #d6d0d0;
+      color: rgb(0, 153, 255);
+      font-weight: bold;
+      height: 30px;
+      font-family: monospace;
+      font-size: 24px;
+    }
+
+
+
+    h1 {
+      text-align: center;
+    }
+
+    .para {
+      padding: 10px;
+      padding-left: 20px;
+      font-size: 21px;
+      font-weight: 500;
+      /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    }
+
+    .button {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    button {
+      height: 100%;
+      width: 12%;
+      /* color: #fff; */
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    }
+
+    button:hover {
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+    }
+
+
+
+
+    .footer-distributed {
+      background-color: #292c2f;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: normal 16px sans-serif;
+      padding: 15px 50px 25px 30px;
+      margin-top: 15px;
+    }
+
+    .footer-distributed .footer-left p {
+      color: #8f9296;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0 10px;
+      padding: 0;
+      transition: ease .25s;
+    }
+
+    .footer-distributed p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: ease .25s;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "·";
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      float: right;
+      margin-top: 6px;
+      max-width: 180px;
+    }
+
+    .footer-distributed .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition: all .25s;
+    }
+
+    .footer-distributed .footer-right a:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+    }
+
+    .footer-distributed p.footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 600px) {
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-right {
+        text-align: center;
+      }
+
+      .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+      }
+
+      .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+      }
+    }
+  </style>
+  <title>Scheme 01</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <img class="img" src="media/images/main-logo.jpg" alt="Main Logo">  
+      <img class="img" src="media/images/gov-guj.png" alt="Gov. of Gujarat">
+      <a href="profile"><img class="user" src="media/images/user.png" alt="Profile"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li>
+          <a href="about">About</a>
+        </li>
+        <li>
+          <a href="scheme-page">Scheme</a>
+          <ul>
+            <li><a href="scheme01">ADIWASI VIKAS YOJANA</a></li>
+            <li><a href="scheme02">ASHRAM SHALA</a></li>
+            <li><a href="/scheme03">EKLAVYA MODEL RESIDENTIAL SCHOOL</a></li>
+            <li><a href="scheme04">TRIBAL DEVELOPMENT SCHEMES FOR WOMEN</a></li>
+            <li><a href="scheme05">TRIBAL YOUTH HOSTEL</a></li>
+            <li><a href="scheme06">VANBANDHU KALYAN YOJAN</a></li>
+            <li><a href="scheme07">VAN DHAN VIKAS KENDRA</a></li>
+          </ul>
+        </li>
+        <li><a href="contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+
+
+  </header>
+  <br>
+
+  <div class="what">
+    <marquee behavior="" direction="">The Chief Minister of Gujarat announced the Van Bandhu Kalyan Yojana (CM's Ten
+      Point Program) to develop 43 ITDP Talukas in Gujarat.</marquee>
+  </div>
+
+  <h1>PER MATRIC</h1>
+
+  <div class="para">
+    <p>
+    <h3>Details :</h3>
+
+    -The Government of Gujarat provides Pre-Matric Scholarships for Scheduled Caste (SC) and Scheduled Tribe (ST)
+    students in Gujarat. These scholarships are designed to support students from these communities in their pre-matric
+    education, which generally includes classes from 1 to 10. <br>
+
+
+    <h3>Objective :</h3>
+
+    -The primary objective to offering scholarships at the pre-matric level, the government aims to encourage students
+    to complete their basic education, which is a critical foundation for their future development.<br><br>
+
+    -This scholarship program helps reduce dropout rates by covering various educational expenses, such as tuition fees,
+    exam fees, and other related costs.<br><br>
+
+    -By providing financial aid, the government aims to empower SC and ST students to access quality education and
+    improve their socioeconomic status.<br><br>
+
+    -The Pre-Matric Scholarship program promotes inclusive growth by ensuring that students from SC and ST communities
+    have equal opportunities for education.<br>
+
+
+    <h3>Eligibility :</h3>
+
+    -The applicant must belong to either the Scheduled Caste (SC) or Scheduled Tribe (ST) community.<br><br>
+
+    -The student should be studying in a government or recognized private school in Gujarat.<br><br>
+
+    -The annual family income of the student's parents or guardians should not exceed the prescribed limit. This limit
+    may vary from year to year, so it's essential to check the current income limit specified by the Gujarat
+    government.Nowadays,it is 2,50,000 INR.<br>
+
+
+    <h3>Application Process :</h3>
+
+    Step 1:Visit the official website of the Government of Gujarat's Education Department or the National Scholarship
+    Portal (NSP).<br><br>
+
+    Step 2:Register or log in to the scholarship portal.<br><br>
+
+    Step 3:Fill out the application form with accurate information.<br><br>
+
+    Step 4:Upload the necessary documents, including caste certificate, income certificate, and academic
+    records.<br><br>
+
+    Step 5:Submit the application within the specified deadline.<br>
+
+
+    <h3>Documents Required :</h3>
+
+    -Caste Certificate<br><br>
+
+    -Income Certificate<br><br>
+
+    -Domicile Certificate<br><br>
+
+    -Aadhaar Card<br><br>
+
+    -Bank Account Details<br><br>
+
+    -Educational Certificate<br><br>
+
+    -Passport-sized Photograph<br><br>
+
+    -Bonafide Certificate</p>
+  </div>
+
+
+  <div class="button"><a href="pe-matric">
+      <button type="button" onclick="myfunction()">Registration</button></a>
+  </div>
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="home">Home</a>
+
+        <a href="login">Login</a>
+
+        <a href="scheme-page">Scheme</a>
+
+        <a href="scholarship-page">Scholarship</a>
+
+        <a href="about">About</a>
+
+        <a href="contact">Contact / Feedback</a>
+      </p>
+
+      <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

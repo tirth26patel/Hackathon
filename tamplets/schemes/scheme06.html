@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="scheme06.css"> -->
+  <style>
+    body {
+      position: relative;
+      margin: 20px 20px 20px 30px;
+      font-family: "Lexend Exa", sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .header img {
+      margin-right: 75px;
+      height: 145px;
+      /* max-width: 110px; */
+    }
+
+    .header .user {
+      width: 70px;
+      height: 70px;
+      margin-top: 32px;
+      margin-left: 825px;
+    }
+
+    nav {
+      position: absolute;
+      top: 45px;
+      left: 750px;
+      transform: translateX(-50%);
+      display: inline-block;
+      /* border: 2px solid #EBECF1; */
+      /* border-radius: 30px; */
+      animation: slide-in 1s ease-out;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0 30px;
+      list-style-type: none;
+    }
+
+    ul li:not(:last-child) {
+      margin-right: 80px;
+    }
+
+    ul li {
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.2s;
+    }
+
+    ul li a {
+      color: #003cff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0;
+      background-image: linear-gradient(to right top, #27a9f4, #14fff1);
+      /* border: 2px solid #F7C833;
+border-right: 2px solid #F89329;
+border-bottom: 2px solid #F89329; */
+      border-radius: 9px;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    ul li ul li {
+      margin: -2px 0 0 -2px;
+      width: calc(100% - 20px);
+      line-height: 1.7;
+    }
+
+    ul li ul li a {
+      color: #ff0cc2;
+    }
+
+    ul li:hover {
+      background-image: linear-gradient(to right top, #27a9f4, #14fff1);
+      border-radius: 40px;
+    }
+
+    ul li:hover a {
+      color: #000000;
+      font-size: 21px;
+    }
+
+    ul li:hover ul {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul li:hover ul li a {
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+    }
+
+    @keyframes slide-in {
+      0% {
+        top: -50px;
+      }
+
+      40% {
+        top: 20px;
+      }
+
+      70% {
+        top: 10px;
+      }
+
+      100% {
+        top: 15px;
+      }
+    }
+
+
+    .what h1 {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .what marquee {
+      background-color: #d6d0d0;
+      color: rgb(0, 153, 255);
+      font-weight: bold;
+      height: 30px;
+      font-family: monospace;
+      font-size: 24px;
+    }
+
+
+
+    h1 {
+      text-align: center;
+    }
+
+    .para {
+      padding: 10px;
+      padding-left: 20px;
+      font-size: 21px;
+      font-weight: 500;
+      /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    }
+
+    .button {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    button {
+      height: 100%;
+      width: 12%;
+      /* color: #fff; */
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+    button:hover {
+      background: linear-gradient(-135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+
+
+
+    .footer-distributed {
+      background-color: #292c2f;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: normal 16px sans-serif;
+      padding: 15px 50px 25px 30px;
+      margin-top: 15px;
+    }
+
+    .footer-distributed .footer-left p {
+      color: #8f9296;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0 10px;
+      padding: 0;
+      transition: ease .25s;
+    }
+
+    .footer-distributed p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: ease .25s;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "·";
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      float: right;
+      margin-top: 6px;
+      max-width: 180px;
+    }
+
+    .footer-distributed .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition: all .25s;
+    }
+
+    .footer-distributed .footer-right a:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+    }
+
+    .footer-distributed p.footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 600px) {
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-right {
+        text-align: center;
+      }
+
+      .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+      }
+
+      .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+      }
+    }
+  </style>
+  <title>Scheme 01</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <img class="img" src="media/images/main-logo.jpg" alt="Main Logo">  
+      <img class="img" src="media/images/gov-guj.png" alt="Gov. of Gujarat">
+      <a href="profile"><img class="user" src="media/images/user.png" alt="Profile"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li>
+          <a href="about">About</a>
+        </li>
+        <li>
+          <a href="scholarship-page">Scholarship</a>
+          <ul>
+            <li><a href="scholarship1">GUJARAT STATE HANDICAPPED EDUCATION</a></li>
+            <li><a href="scholarship2">MYSY</a></li>
+            <li><a href="scholarship3">NATIONAL OVERSEAS SCHOLARSHIP</a></li>
+            <li><a href="scholarship4">POST MATRIC</a></li>
+            <li><a href="scholarship5">PRE MATRIC</a></li>
+
+          </ul>
+        </li>
+        <li><a href="contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+
+
+  </header>
+  <br>
+
+  <div class="what">
+    <marquee behavior="" direction="">The Chief Minister of Gujarat announced the Van Bandhu Kalyan Yojana (CM's Ten
+      Point Program) to develop 43 ITDP Talukas in Gujarat.</marquee>
+  </div>
+
+  <h1>VANBANDHU KALYAN YOJAN</h1>
+
+  <div class="para">
+    <p>
+    <h3>Chief Minister's Ten Point Programme:</h3>
+
+    Vanbandhu Kalyan Yojana (VKY) was launched in 2007 with an Eleventh Plan allocation of Rs. 15,000 crore for speedy
+    development of tribal areas of the State. The new package envisages re-engineering the processes of existing
+    interventions which focus on livelihood development, provision of quality education and development of
+    infrastructure in these areas. <br>
+
+    <h3>The ten focus areas of intervention under VKY during the XI Five Year Plan period were as follows :</h3>
+
+    <h4>1) Employment Opportunities for 5 Lakh Families: </h4>
+
+    <h4>Vision </h4>:
+
+    -Double the income of all tribal families, with a special focus on the migrant families and the Particularly
+    Vulnerable Tribal Groups. <br>
+
+    <h4>Activities :</h4>
+
+    -Creation of more employment through productivity enhancement in agriculture sector <br>
+    -Increas in animal husbandry and dairy based activities <br>
+    -Quality skill training for tribal youth <br>
+
+    <h3>2) Quality of Education and Higher Education :</h3>
+
+    <h4>Vision :</h4> <br>
+
+    -Access to quality education for every eligible tribal child and increased emphasis on higher education. <br>
+
+    <h4>Activities :</h4>
+
+    Higher Secondary Schools for science in each taluka. <br>
+    Provision for enrolling 1000 students in nationally recognized residential schools and creating a talent pool for
+    Scheduled Tribes. <br>
+    Navodaya or Eklavya type residential schools in each tribal taluka and making them comparable with quality urban
+    schools. <br>
+    Establishment of 1000 additional hostels for college students Establishment of Arts, Science and Commerce colleges
+    to cover remote and left out talukas. <br>
+    Establishment of excellent academic units including engineering and medical colleges, polytechnics, nursing colleges
+    and ITIs. <br>
+
+    <h3>3) Economic Development :</h3>
+
+    Vision: <br><br>
+
+    -Double the income of all tribal families including migrant tribal families and Particularly Vulnerable Tribal
+    Groups, and facilitate economic growth in villages by providing basic facilities such as roads and energy network.
+    <br>
+
+    <h4>Activities :</h4>
+
+    -Annual allocation of Rs. 1 crore per taluka for development of identified economic activities through cluster based
+    based approach and market linkage. <br>
+    -Linking remote Scheduled Tribe areas to nearby economic centres through development of basic infrastructure and
+    facilities such as roads, water supply, irrigation and continuous power supply in all tribal areas. <br>
+    -Value addition to local natural resources for higher returns to Scheduled Tribe families. <br>
+
+    <h3>4) Health :</h3>
+
+    <h4>Vision :</h4>
+
+    -As with other basic services, access to quality health facilities, too have eluded tribal communities due to their
+    distant, difficult and sparsely populated terrain. <br>
+
+    <h3>5) Housing :</h3>
+
+    <h4>Vision :</h4>
+
+    -With a vision of housing provision for all the tribal communities, more than 4.48 lakh tribal persons were assisted
+    under various Central and State level Housing Scheme like Indira Aawas Yojana, Sardar Awas Yojana, individual
+    housing, etc. <br>
+
+    <h3>6) Provision of Drinking water :</h3>
+
+    -Providing water supply at the door step of every tribal household is essential in to improve the quality of life.
+    Most of the tribal areas are characterised by hilly terrain, rocky sub strata and presence of forest on large chunks
+    which makes the problem of supplying safe drinking water difficult. Water Supply and Sanitation Department through
+    various water supply schemes viz, Individual or group piped water supply schemes, Hand Pumps are constructed to
+    provide drinking water supply. <br>
+
+    <h3>7) Irrigation :</h3>
+
+    <h4>Vision :</h4>
+
+    -Most of the Tribal population are engaged in agricultural for livelihood, therefore, improvement in irrigation
+    facilities act as a special booster for them. Greater focus on group wells and lift irrigation based check dams is
+    needed in order to support agriculture in tribal areas and reduce dependence on monsoon for irrigation. <br>
+
+    <h3>8) Universal Electrification :</h3>
+
+    <h4>Vision :</h4>
+
+    -Providing quality power supply to all tribal areas for accelerated socio-economic development of tribal community
+    is essential. Therefore, providing electricity to all has been given special focus under VKY. More than 1,000 Peta
+    Paras and 1.92 Lakh houses have been already achieved under Kutir Jyoti Scheme for Household Electrification. Under
+    this Scheme, single-phase connection with Single point wiring is being given, free of cost. <br>
+
+    <h3>9) All-Weather Road Connectivity :</h3>
+
+    <h4>Vision : </h4>
+
+    -To provide connectivity to all villages by all-weather roads, and improve the quality of life in tribal areas, in
+    terms of quick access to health services, better education, social service etc is essential. In Gujarat 99.63% of
+    revenue villages have been connected through road, and also connected to taluka place through main roads. <br>
+
+    <h3>10) Urban Development :</h3>
+
+    <h4>Vision :</h4>
+
+    -Develop tribal towns as growth engines to augment the income of tribal farmers. <br>
+
+    <h4>Activities :</h4>
+
+    -GUDC appointed as Nodal Agency for Urban Infrastructure Development in tribal towns. <br>
+    -Development Plans prepared for each town, comprising Water Supply, Sewerage, Roads, Storm Water Drain, Economic &
+    Social Infrastructure.</p>
+  </div>
+
+
+  <div class="button"><a href="van">
+      <button type="button" onclick="myfunction()">Registration</button></a>
+  </div>
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="home">Home</a>
+
+        <a href="login">Login</a>
+
+        <a href="scheme-page">Scheme</a>
+
+        <a href="scholarship-page">Scholarship</a>
+
+        <a href="about">About</a>
+
+        <a href="contact">Contact / Feedback</a>
+      </p>
+
+      <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

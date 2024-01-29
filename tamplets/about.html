@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <style>
+      body {
+    position: relative;
+    margin: 20px 20px 20px 30px;
+    font-family: "Lexend Exa", sans-serif;
+}
+
+
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.header img {
+  margin-right: 75px;
+  height: 145px;
+  /* max-width: 110px; */
+}
+
+.header .user{
+    width: 70px;
+    height: 70px;
+    margin-top: 32px;
+    margin-left: 825px;
+}
+
+nav {
+  position: absolute;
+  top: 45px;
+  left: 750px;
+  transform: translateX(-50%);
+  display: inline-block;
+  /* border: 2px solid #EBECF1; */
+  /* border-radius: 30px; */
+  animation: slide-in 1s ease-out;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 30px;
+  list-style-type: none;
+}
+ul li:not(:last-child) {
+  margin-right: 80px;
+}
+ul li {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background 0.2s;
+}
+ul li a {
+  color: #003cff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  font-weight: 500;
+  font-size: 20px;
+}
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  display: block;
+  margin: 12px -12px;
+  padding: 0;
+  background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+  /* border: 2px solid #F7C833;
+  border-right: 2px solid #F89329;
+  border-bottom: 2px solid #F89329; */
+  border-radius: 12px;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+ul li ul li {
+  margin: -2px 0 0 -2px;
+  width: calc(100% - 20px);
+  line-height: 1.7;
+}
+ul li ul li a {
+  color: #ff0cc2;
+}
+ul li:hover {
+  background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+  border-radius: 40px;
+}
+
+ul li:hover a {
+  color: #000000;
+  font-size: 21px;
+}
+ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+ul li:hover ul li a {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: 20px;
+  }
+  70% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+
+.content{
+    justify-content: baseline;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title{
+    color: #003cff;
+}
+
+.heading{
+    background-color: #dfd337;
+}
+
+h3{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.policy{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+p{
+    font-size: large;
+}
+
+
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 15px 50px 25px 30px;
+    margin-top: 15px;
+  }
+  
+  .footer-distributed .footer-left p {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+  }
+  /* Footer links */
+  
+  .footer-distributed p.footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+    transition: ease .25s;
+  }
+  
+  .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    transition: ease .25s;
+  }
+  
+  .footer-distributed .footer-links a:before {
+    content: "·";
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+  
+  .footer-distributed .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
+  
+  .footer-distributed .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+    transition:all .25s;
+  }
+  
+  .footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+  
+  .footer-distributed p.footer-links a:hover{text-decoration:underline;}
+  
+  /* Media Queries */
+  
+  @media (max-width: 600px) {
+    .footer-distributed .footer-left, .footer-distributed .footer-right {
+      text-align: center;
+    }
+    .footer-distributed .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+    }
+    .footer-distributed .footer-left p.footer-links {
+      line-height: 1.8;
+    }
+  }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="about.css"> -->
+</head>
+<body>
+    <header>
+        <div class="header">
+          <img class="img" src="media/images/main-logo.jpg" alt="Main Logo">  
+          <img class="img" src="media/images/gov-guj.png" alt="Gov. of Gujarat">
+            <a href="profile"><img class="user" src="media/images/user.png" alt="Profile"></a>
+        </div>
+    
+        <nav>
+          <ul>
+            <li><a href="home">Home</a></li>
+            <li>
+              <a href="scheme-page">Scheme</a>
+              <ul>
+                <li><a  href="scheme01">ADIWASI VIKAS YOJANA</a></li>
+                <li><a  href="scheme02">ASHRAM SHALA</a></li>
+                <li><a  href="scheme03">EKLAVYA MODEL RESIDENTIAL SCHOOL</a></li>
+                <li><a  href="scheme04">TRIBAL DEVELOPMENT SCHEMES FOR WOMEN</a></li>
+                <li><a  href="scheme05">TRIBAL YOUTH HOSTEL</a></li>
+                <li><a  href="scheme06">VANBANDHU KALYAN YOJAN</a></li>
+                <li><a  href="scheme07">VAN DHAN VIKAS KENDRA</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="scholarship-page">Scholarship</a>
+              <ul>
+                <li><a href="scholarship1">GUJARAT STATE HANDICAPPED EDUCATION</a></li>
+                <li><a href="scholarship2">MYSY</a></li>
+                <li><a href="scholarship3">NATIONAL OVERSEAS SCHOLARSHIP</a></li>
+                <li><a href="scholarship4">POST MATRIC</a></li>
+                <li><a href="scholarship5">PRE MATRIC</a></li>
+      
+              </ul>
+            </li>
+            <li><a href="contact">Contact</a></li>
+            
+          </ul>
+          
+        </nav>
+    
+      </header>
+    
+      <div class="content">
+
+        <h1>Formation of Corporation</h1>
+
+        <h4 class="title">Gujarat Tribal Development Corporation is a statutory corporation. Which has been created from Gujarat Tribal Development <span class="heading">Act 1972 (Guj.Act No.5-1972)</span>.The Corporation has commenced operations with the first meeting of the Board of Directors held on <span class="heading">24/12/1972</span>.</h4>
+
+        <h3>The Policy matters of the Corporation are decided by the Board of Directors</h3>
+
+        <h4 class="policy">• Board of Directors :-</h4>
+
+        <p>The corporation consists of 9 members. In which 6 directors are non-government and 3 directors are government. 6 Non-Government Directors consist of 1 Chairman, 1 Vice Chairman and remaining 4 Directors. And 3 Government members include 1 Executive Director, 1 Deputy Subhiv (Tribal) and 1 Financial Adviser. Which is appointed by the state government.</p>
+
+        <h4 class="policy">• Duties :-</h4>
+
+        <p>According to Section 16(1) of the Act, the tribal people living in Gujarat undertake the work of loans/credits for financial support. and undertakes the operations of recovery of loans made and all related proceedings.</p>
+
+        <h4 class="policy">• Scope :-</h4>
+
+        <p>According to the provisions of the Gujarat Tribal Development Corporation Act 1972, the Corporation has been given a wide scope to carry out various activities for the social and economic welfare of the tribal people of the entire state of Gujarat. Gujarat Tribal Development Corporation was formed in the year 1972. At the time of the formation of the Corporation in the year 1972, the tribal population in Gujarat was approximately 37,34,422. And sponsorship offices existed in 9 districts in Gujarat. After that, according to the counting of 2011, the total population of Gujarat is 6,04,39,692. In which the number of tribes is 89,17,174. Thus in approximately 39 years, the number of tribes has gradually increased. Thus about 14.75 percent of the total population belongs to tribals. And currently there are sponsorship offices in 14 districts out of total 33 districts of Gujarat.
+
+        <br><br>
+
+        It includes <span class="heading">lanpur, KhedBrahma, Modasa, Lunawada, Godhra, Dahod, Chotaudepur Rajpipla, Bharuch, Mandvi, Songarh, Vansada, Valsad and Dang</span>. In these districts, the Corporation functions are carried out through the Sponsorship Administrator.
+
+        <br><br>
+
+        According to Section 16(r) of the Act, on its own or as approved by the Board, in accordance with the primary duty of carrying out the work of social and economic upliftment of the members of the Scheduled Tribes(ST) residing in the State. Agricultural development program, marketing process, supply and storage of agricultural produce, small scale industries, construction of houses, transportation and other activities as approved by the State Government in this regard are to be organized in collaboration with or through tribal societies or other such agencies.</p>
+
+        <br><br>
+
+        <h3>At present following schemes are implemented by the Corporation</h3>
+
+        <h4 class="policy">(1) Credit under Mudi Fund :-</h4>
+
+        <p>A capital fund of Rs.50 crore has been sanctioned by the State Government to undertake the activities of the Corporation. Which increased in 2017 to Rs. 65 crore.Primarily from capital funds, the Corporation carries out lending activities at the rate of interest ranging from 9 percent to 14 percent under various schemes mentioned below by framing 39 different regulations.</p>
+
+        <h4 class="policy">(2) Schemes of NSTFDC(National Scheduled Tribes Finance and Development Corporation):-</h4>
+
+        <p>In the year 1992-93, through intensive efforts by the Corporation, for the first time in history, the Dairy Unit received Rs. 250 was proposed and 4 cows/buffaloes were found per beneficiary, total 2000 cows/buffaloes were sanctioned and then in the year 1994-95,considering the demand of getting different types of vehicles from the tribal beneficiaries Marutivan, Ambassador, Hot rickshaw Bajaj, Diesel Carrier Rikshmum, Minitruck 407L Tractor Wheat Trolley, Oil Engg/Ile.Motor Vigger Loans started.</p>
+
+        <h4 class="policy">(3) Interest Relief Scheme :-</h4>
+
+        <p>In this scheme, loans from nationalized banks against the guarantee of the state government are provided to the tribal people at the rate of 4 percent for the following purposes. 1. Dairy cattle 2. Bull 3. Bullock carts 4.Poultry farming 5.Fishery industry 6.Oil engine 7.Electric motor 8. A cottage industry. The scheme was started in the year 1977-78 and continued till the year 1992-93. As per the guidelines of the Reserve Bank of India, beneficiaries under the Integrated Village Development Agency and other aid based schemes could not be given credit under the scheme.</p>
+
+        <h4 class="policy">(4) Scheme under IDP scheme:-</h4>
+
+        <p>This scheme has been started from the year 2007-08. Under the scheme, tribal people are eligible for a loan of Rs.20,000/- per unit for purchasing cattle. The rate of interest is 4 percent. Financing is done through the respective District Dairy (Unions).</p>
+
+        <h4 class="policy">(5) Scheme for Higher Education of Scheduled Tribe Students (NSTFDC):-</h4>
+
+        <p>This scheme has been started from the year 2012-13. Tribal students are eligible for loans up to Rs.5 lakh through NSTFDC(National Scheduled Tribes Finance and Development Corporation) for higher studies in India. The rate of interest is 6 percent.</p>
+
+        <h4 class="policy">(6) Scheme of Financial Loan/Assistance to Law Graduates for Independent Practice of Law:-</h4>
+
+        <p>This scheme has been started from the year 2000-01. Under the scheme, a loan of Rs.5,000/- and assistance of Rs.7,000/- to tribal law graduates for independent practice of law, totaling Rs. 12,000/- is payable. The rate of interest is 4 percent.</p>
+
+        <h4 class="policy">(7) Loan for payment of all semester fees to a student admitted in MBBS course after Class-12 in self-supporting college:-</h4>
+
+        <p>This scheme has been started from the year 2014-15. A loan will be given to a student admitted to an independent college in the MBBS course after Class-12 from the State Government as per the tuition fee fixed by the Fee Determination Committee from time to time. The annual income limit for male students is Rs.2.50 lakh. There is no income limit for female students.</p>
+
+        <h4 class="policy">(8) Scheme of loan/assistance to MD or MS (Post Graduate) Doctors for starting independent business:-</h4>
+
+        <p>This scheme has been started from the year 2001-02. Tribal post graduate doctors are eligible for a margin loan of 25% of the maximum loan amount of Rs.1.50 lakh and a maximum of Rs.50,000/- against the loan from a bank or other financial institution. The rate of interest is 4 percent.</p>
+    
+    </div>
+
+
+
+      <footer class="footer-distributed">
+
+        <div class="footer-right">
+    
+        </div>
+    
+        <div class="footer-left">
+    
+          <p class="footer-links">
+            <a class="link-1" href="home">Home</a>
+    
+            <a href="login">Login</a>
+    
+            <a href="scheme-page">Scheme</a>
+    
+            <a href="scheme-page">Scholarship</a>
+    
+            <a href="about">About</a>
+    
+            <a href="contact">Contact / Feedback</a>
+          </p>
+    
+          <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+        </div>
+    
+      </footer>
+
+</body>
+</html>

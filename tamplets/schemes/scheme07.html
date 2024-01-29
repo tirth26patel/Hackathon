@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="scheme07.css"> -->
+  <style>
+    body {
+      position: relative;
+      margin: 20px 20px 20px 30px;
+      font-family: "Lexend Exa", sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .header img {
+      margin-right: 75px;
+      height: 145px;
+      /* max-width: 110px; */
+    }
+
+    .header .user {
+      width: 70px;
+      height: 70px;
+      margin-top: 32px;
+      margin-left: 825px;
+    }
+
+    nav {
+      position: absolute;
+      top: 45px;
+      left: 750px;
+      transform: translateX(-50%);
+      display: inline-block;
+      /* border: 2px solid #EBECF1; */
+      /* border-radius: 30px; */
+      animation: slide-in 1s ease-out;
+      z-index: 2;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0 30px;
+      list-style-type: none;
+    }
+
+    ul li:not(:last-child) {
+      margin-right: 80px;
+    }
+
+    ul li {
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.2s;
+    }
+
+    ul li a {
+      color: #003cff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0;
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+      /* border: 2px solid #F7C833;
+border-right: 2px solid #F89329;
+border-bottom: 2px solid #F89329; */
+      border-radius: 9px;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    ul li ul li {
+      margin: -2px 0 0 -2px;
+      width: calc(100% - 20px);
+      line-height: 1.7;
+    }
+
+    ul li ul li a {
+      color: #ff0cc2;
+    }
+
+    ul li:hover {
+      background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+      border-radius: 40px;
+    }
+
+    ul li:hover a {
+      color: #000000;
+      font-size: 21px;
+    }
+
+    ul li:hover ul {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul li:hover ul li a {
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+    }
+
+    @keyframes slide-in {
+      0% {
+        top: -50px;
+      }
+
+      40% {
+        top: 20px;
+      }
+
+      70% {
+        top: 10px;
+      }
+
+      100% {
+        top: 15px;
+      }
+    }
+
+
+    .what h1 {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .what marquee {
+      background-color: #d6d0d0;
+      color: rgb(0, 153, 255);
+      font-weight: bold;
+      height: 30px;
+      font-family: monospace;
+      font-size: 24px;
+    }
+
+
+
+    h1 {
+      text-align: center;
+    }
+
+    .para {
+      padding: 10px;
+      padding-left: 20px;
+      font-size: 21px;
+      font-weight: 500;
+      /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    }
+
+    .button {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    button {
+      height: 100%;
+      width: 12%;
+      /* color: #fff; */
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+    button:hover {
+      background: linear-gradient(-135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+
+
+
+    .footer-distributed {
+      background-color: #292c2f;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: normal 16px sans-serif;
+      padding: 15px 50px 25px 30px;
+      margin-top: 15px;
+    }
+
+    .footer-distributed .footer-left p {
+      color: #8f9296;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0 10px;
+      padding: 0;
+      transition: ease .25s;
+    }
+
+    .footer-distributed p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: ease .25s;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "·";
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      float: right;
+      margin-top: 6px;
+      max-width: 180px;
+    }
+
+    .footer-distributed .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition: all .25s;
+    }
+
+    .footer-distributed .footer-right a:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+    }
+
+    .footer-distributed p.footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 600px) {
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-right {
+        text-align: center;
+      }
+
+      .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+      }
+
+      .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+      }
+    }
+  </style>
+  <title>Scheme 01</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <img class="img" src="media/images/main-logo.jpg" alt="Main Logo">  
+      <img class="img" src="media/images/gov-guj.png" alt="Gov. of Gujarat">
+      <a href="profile"><img class="user" src="media/images/user.png" alt="Profile"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li>
+          <a href="about">About</a>
+        </li>
+        <li>
+          <a href="scholarship-page">Scholarship</a>
+          <ul>
+            <li><a href="scholarship1">GUJARAT STATE HANDICAPPED EDUCATION</a></li>
+            <li><a href="scholarship2">MYSY</a></li>
+            <li><a href="scholarship3">NATIONAL OVERSEAS SCHOLARSHIP</a></li>
+            <li><a href="scholarship4">POST MATRIC</a></li>
+            <li><a href="scholarship5">PRE MATRIC</a></li>
+
+          </ul>
+        </li>
+        <li><a href="contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+
+
+  </header>
+  <br>
+
+  <div class="what">
+    <marquee behavior="" direction="">The Chief Minister of Gujarat announced the Van Bandhu Kalyan Yojana (CM's Ten
+      Point Program) to develop 43 ITDP Talukas in Gujarat.</marquee>
+  </div>
+
+  <h1>VAN DHAN VIKAS KENDRA </h1>
+
+  <div class="para">
+    <p>
+    <H3>What is Pradhan Mantri Van Dhan Yojana?</H3>
+    Pradhan Mantri Van Dhan Yojana (PMVDY) is a government initiative. It was launched in 2016 to help tribal
+    communities in India who depend on forest produce for their livelihood. <br>
+
+    The scheme aims to create a sustainable livelihood for these communities. It provides them with financial support,
+    training, and marketing support for their forest produce.
+    <h3>PMVDY has four components :</h3>
+    Van Dhan Clusters <br>
+    Van Dhan Kendras <br>
+    Van Dhan Vikas Kendra <br>
+    Van Dhan Mission Directorate <br>
+    The scheme has been implemented in 20 states and 2 Union Territories. <br>
+    It has covered over 2.5 million tribal families. <br>
+    The scheme has helped to generate over 10 million man-days of employment. <br>
+    It has created over 10,000 Van Dhan Clusters and over 5,000 Van Dhan Kendras. <br>
+    The scheme has helped to increase the income of tribal communities by over 20%. <br>
+    It has helped to improve the marketing of forest produce and to reduce the exploitation of tribal communities. <br>
+    Also, read the Pradhan Mantri Matsya Sampada Yojana (PMMSY) here! <br>
+
+
+    <h3>Key Features of the Van Dhan Yojna</h3>
+    The project intends to help tribals participating in the accumulation of Minor Food Produces (MFPs) grow their
+    economies by assisting them in making the best use of ecological assets and offering them a stable source of income.
+    <br>
+    Under this initiative, Van Dhan Vikas Kendras are built to offer capacity-enhancement training, including the
+    creation of basic management and value-added facilities. <br>
+    Also, read the Kisan Sampada Yojna here. <br>
+
+
+    We will establish 50,000 ‘Van Dhan Vikas Kendras’ in the tribal areas of the country to ensure the availability of
+    primary processing and value addition for forest produce and to provide employment for tribals and increase tribal
+    income,” Prime Minister , Shri Narendra Modi. <br> <br>
+
+    This had been the Prime Minister’s Sankalp as a part of his vision for overall development of the country and to
+    make each section of society self-reliant and empowered. <br><br>
+
+    As per TRIFED, in less than 18 months, 33,360 Van DhanVikas Kendras, subsumed into 2224 VDVKCs of 300 forest
+    dwellers each, have been sanctioned by TRIFED as of March 31, 2021. TRIFED states that a typical Van Dhan Vikas
+    Kendra includes 20 tribal members. 15 such Van Dhan Vikas Kendras form 1 Van Dhan Vikas Kendra cluster. The Van Dhan
+    Vikas Kendra Clusters will provide the Van Dhan Vikas Kendras economies of scale, livelihood and market-linkages, as
+    well as entrepreneurship opportunities to Tribal forest gatherers in 23 states and 2 UTs. <br>
+    We will establish 50,000 ‘Van Dhan Vikas Kendras’ in the tribal areas of the country to ensure the availability of
+    primary processing and value addition for forest produce and to provide employment for tribals and increase tribal
+    income,” Prime Minister , Shri Narendra Modi. <br>
+
+    This had been the Prime Minister’s Sankalp as a part of his vision for overall development of the country and to
+    make each section of society self-reliant and empowered. <br><br>
+
+    As per TRIFED, in less than 18 months, 33,360 Van DhanVikas Kendras, subsumed into 2224 VDVKCs of 300 forest
+    dwellers each, have been sanctioned by TRIFED as of March 31, 2021. TRIFED states that a typical Van Dhan Vikas
+    Kendra includes 20 tribal members. 15 such Van Dhan Vikas Kendras form 1 Van Dhan Vikas Kendra cluster. The Van Dhan
+    Vikas Kendra Clusters will provide the Van Dhan Vikas Kendras economies of scale, livelihood and market-linkages, as
+    well as entrepreneurship opportunities to Tribal forest gatherers in 23 states and 2 UTs. <br>
+    TRIFED has now launched “Sankalp se Siddhi” - Village & Digital Connect Drive. Starting from April 1, 2021, this 100
+    day drive will entail 150 teams (10 in each region from TRIFED and State Implementation Agencies/Mentoring
+    Agencies/Partners) visiting ten villages each. 100 villages in each region and 1500 villages in the country will be
+    covered in the next 100 days. The main aim of this drive is to activate the Van Dhan Vikas Kendras in these
+    villages. Aim is to achieve Rs 200 crore Sales during the next 12 months from VanDhan units. The visiting teams will
+    also identify locations and shortlist potential VDVKs for clustering as TRIFOOD, SFURTI units as larger enterprises.
+    <br><br>
+
+    To further the “Be Vocal for Local Buy Tribal” to create an “Atmanirbhar Bharat” call, TRIFED is working on the
+    transformation from the Van Dhan mode to <br>
+    Tribal enterprise mode. By clustering these Van Dhan Vikas Kendras into Van Dhan clusters and enterprises, the aim
+    is to achieve economies of scale and promote high value addition produce. <br><br>
+
+    To further institonalise the Van Dhan Vikas Kendra Clusters, TRIFED, under the aegis of Ministry of Tribal Affairs
+    is driving convergences with different ministries and organisations. It has MoUs in place with different ministries
+    such as MSME, MoFPI and Ministry of Rural Development to align the scheme with similar programmes of these
+    Ministries, resulting in the convergence of Van Dhan Vikas Kendras and its clusters with SFURTI, ESDP from MSME,
+    Food Parks Scheme of MoFPI and NRLM, within M/oRural Development. <br><br>
+
+    These initiatives will be centred around the constitutional obligations under the Provisions of the Panchayats
+    (Extension to Scheduled Areas) Act, 1996 (PESA) and the Forest Rights Act, 2006 (FRA) to empower tribals living in
+    the forest areas. <br></p>
+  </div>
+
+
+  <div class="button"><a href="vanbandhu">
+      <button type="button" onclick="myfunction()">Registration</button></a>
+  </div>
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="home">Home</a>
+
+        <a href="login">Login</a>
+
+        <a href="scheme-page">Scheme</a>
+
+        <a href="scholarship-page">Scholarship</a>
+
+        <a href="about">About</a>
+
+        <a href="contact">Contact / Feedback</a>
+      </p>
+
+      <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

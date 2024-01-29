@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="scheme04.css"> -->
+  <style>
+    body {
+      position: relative;
+      margin: 20px 20px 20px 30px;
+      font-family: "Lexend Exa", sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .header img {
+      margin-right: 75px;
+      height: 145px;
+      /* max-width: 110px; */
+    }
+
+    .header .user {
+      width: 70px;
+      height: 70px;
+      margin-top: 32px;
+      margin-left: 825px;
+    }
+
+    nav {
+      position: absolute;
+      top: 45px;
+      left: 750px;
+      transform: translateX(-50%);
+      display: inline-block;
+      /* border: 2px solid #EBECF1; */
+      /* border-radius: 30px; */
+      animation: slide-in 1s ease-out;
+      z-index: 2;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0 30px;
+      list-style-type: none;
+    }
+
+    ul li:not(:last-child) {
+      margin-right: 80px;
+    }
+
+    ul li {
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.2s;
+    }
+
+    ul li a {
+      color: #003cff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      display: block;
+      margin: 12px -12px;
+      padding: 0;
+      background-image: linear-gradient(to right top, #27a9f4, #14fff1);
+      /* border: 2px solid #F7C833;
+border-right: 2px solid #F89329;
+border-bottom: 2px solid #F89329; */
+      border-radius: 9px;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    ul li ul li {
+      margin: -2px 0 0 -2px;
+      width: calc(100% - 20px);
+      line-height: 1.7;
+    }
+
+    ul li ul li a {
+      color: #ff0cc2;
+    }
+
+    ul li:hover {
+      background-image: linear-gradient(to right top, #27a9f4, #14fff1);
+      border-radius: 40px;
+    }
+
+    ul li:hover a {
+      color: black;
+      font-size: 21px;
+    }
+
+    ul li:hover ul {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul li:hover ul li a {
+      color: black;
+      font-size: 16px;
+    }
+
+    @keyframes slide-in {
+      0% {
+        top: -50px;
+      }
+
+      40% {
+        top: 20px;
+      }
+
+      70% {
+        top: 10px;
+      }
+
+      100% {
+        top: 15px;
+      }
+    }
+
+
+    .what h1 {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .what marquee {
+      background-color: #d6d0d0;
+      color: rgb(0, 153, 255);
+      font-weight: bold;
+      height: 30px;
+      font-family: monospace;
+      font-size: 24px;
+    }
+
+
+
+    h1 {
+      text-align: center;
+    }
+
+    .para {
+      padding: 10px;
+      padding-left: 20px;
+      font-size: 21px;
+      font-weight: 500;
+      /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    }
+
+    .button {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    button {
+      height: 100%;
+      width: 12%;
+      /* color: #fff; */
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+    button:hover {
+      background: linear-gradient(-135deg, #6393eccb, #36e7de, #5be672);
+    }
+
+
+
+
+    .footer-distributed {
+      background-color: #292c2f;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: normal 16px sans-serif;
+      padding: 15px 50px 25px 30px;
+      margin-top: 15px;
+    }
+
+    .footer-distributed .footer-left p {
+      color: #8f9296;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0 10px;
+      padding: 0;
+      transition: ease .25s;
+    }
+
+    .footer-distributed p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: ease .25s;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "·";
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    .footer-distributed .footer-right {
+      float: right;
+      margin-top: 6px;
+      max-width: 180px;
+    }
+
+    .footer-distributed .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition: all .25s;
+    }
+
+    .footer-distributed .footer-right a:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+    }
+
+    .footer-distributed p.footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 600px) {
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-right {
+        text-align: center;
+      }
+
+      .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+      }
+
+      .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+      }
+    }
+  </style>
+  <title>Scheme 01</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <img class="img" src="media/images/main-logo.jpg" alt="Main Logo">  
+      <img class="img" src="media/images/gov-guj.png" alt="Gov. of Gujarat">
+      <a href="profile"><img class="user" src="media/images/user.png" alt="Profile"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li>
+          <a href="about">About</a>
+        </li>
+        <li>
+          <a href="scholarship-page">Scholarship</a>
+          <ul>
+            <li><a href="scholarship1">GUJARAT STATE HANDICAPPED EDUCATION</a></li>
+            <li><a href="scholarship2">MYSY</a></li>
+            <li><a href="scholarship3">NATIONAL OVERSEAS SCHOLARSHIP</a></li>
+            <li><a href="scholarship4">POST MATRIC</a></li>
+            <li><a href="scholarship5">PRE MATRIC</a></li>
+
+          </ul>
+        </li>
+        <li><a href="contact">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+
+
+  </header>
+  <br>
+
+  <div class="what">
+    <marquee behavior="" direction="">The Chief Minister of Gujarat announced the Van Bandhu Kalyan Yojana (CM's Ten
+      Point Program) to develop 43 ITDP Talukas in Gujarat.</marquee>
+  </div>
+
+  <h1>TRIBAL DEVELOPMENT SCHEMES FOR WOMEN</h1>
+
+  <div class="para">
+    <p>
+    <h3>Krishi Talim Yojna</h3>
+    Krishi Talim – Training in the field of Agriculture is imparted to Women Farmers and Farmers wives for Research and
+    use of latest technology. These Agricultural women are paid stipend and transportation for the training course. <br>
+
+
+    <h3>Sakhi Mandal Yojna</h3>
+    The Project is to enable the poor women, particularly in rural areas of Gujarat to improve their access to resources
+    and consequently strengthen livelihoods and quality of life. Sakhi Mandals are formation of women self help groups
+    based on thrift and credit principles. It provides financial services to accelerate the process of economic
+    development and ensure welfare of women. They are encouraged to foster decision skills and develop a framework of
+    wider range of participation in micro finance development. In one year, the Gujarat Government aims for one lac
+    Sakhi Mandals across the state. <br>
+
+
+    <h3>Nari Adalat </h3>
+    The concept devised ‘By women for women’ - the Nari Adalats is operational for legal justice in over 19 regions in
+    Gujarat. Women jurists dispense justice in women’s cases of divorce, abandonment, violence, rape and dowry demands.
+    These courts are set up for women empowerment and gender justice. These courts are not recognized by the State as a
+    legal forum. However, the autonomous hybrid institutions are para legal authority who solve women cases faster than
+    judicial courts. These courts are helping rural women overcome problems encountered in the normal judicial system.
+    Inaccessibility, cost, time, unfamiliarity with legal procedures, inadequate resources, and a traditional disregard
+    of the needs of women – all solutions get speedy, efficacy, and cost effective. <br>
+
+
+    <h3>Chiranjeevi Yojna</h3>
+    It is estimated that in the state of Gujarat about 1.2 million children are born each year. Some mothers who belong
+    to Below Poverty Line (BPL) families are the most vulnerable to death during delivery since they face significant
+    risk owing to their poor socio-economic status and limited access to healthcare services. The Chiranjeevi Yojana
+    implemented by the Government of Gujarat is aimed to encourage the BPL families to improve access to Institutional
+    delivery. Financial assistance is provided for protection to the BPL families, covering their out-of-pocket costs
+    incurred on travel to reach the healthcare facility centre. Assistance of Rs.200/- for transportation expenses with
+    Rs.50/- for the attendant is provided. Approximately, 1,63,609 women have availed the benefit of this scheme.
+    <br><br>
+
+    The scheme also provides for financial support to the accompanying person for loss of wages. Out of the many
+    schemes, the main mechanism being used is the BPL card. The scheme was launched as a one year pilot project in
+    December 2005 in five backward districts viz., Banaskantha, Dahod, Kutch, Panchmahals, and Sabarkantha and covered
+    all BPL families. The scheme has now been extended to the entire state. When the scheme was initiated the pilot
+    districts were selected based on remoteness and included regions facing highest infant mortality and maternal
+    mortality. The private medical practitioners (mainly gynaecologists) in these regions were empanelled in the scheme
+    to provide maternity health services. These providers are reimbursed a fixed rate for deliveries carried out by
+    them. <br>
+
+
+    <h3>Mahila Vrudh Ashram</h3>
+    Old Parents are day by day being neglected by the Youth. As a result, the WCD has made special arrangements for
+    uncared women and foster their needs. State Government has set up Old Age Homes for such destitute. Exclusive Women
+    Old Age homes are structured with an exclusive existing Home at Jamnagar. <br>
+
+
+    <h3>Kunverbai nu Mameru scheme</h3>
+    WCD makes provisions for monetary help to scheduled caste for their daughter’s marriage under Kunverbai nu mameru
+    scheme. Those who gets an annual income of Rs.11,000/- can avail Rs.5000/- for their one daughter’s marriage. For
+    this, Rs.2000/- are given to girl’s parents/guardian and Rs.3000/- is given to the girl in the form of Kisan Vikas
+    Patra. <br>
+
+
+    <h3>Saraswati Sadhna Yojna</h3>
+    Introduced first in Gujarat, this is an innovative ‘Go Green’ initiative of the WCD. Provision of Rs. 1 crore has
+    been made under Saraswati Sadhna Yojana to provide bicycles to Scheduled Castes students by the Gujarat Government.
+    A sum of Rs.1500/- is provided to girls below 8th Grade to buy bicycle. Apart from this, provisions are made for
+    students in elementary and high school education to get food and lodging, free of cost. <br>
+
+
+    <h3>Vidhva Sahay and Talim Yojna</h3>
+    The Department is sensitive towards women 18-40 years, who have lost their husbands and initiates policy for their
+    empowerment and economic living condition. For their economical living, under Manav Garima Yojna, Rs. 3000/- margin
+    money is given to help them stand on their feet on their own and empower living. Women in the age group of 18-60
+    years are provided monetary help by way of application. The applicant gets Rs.500/- and two children gets Rs.80/-
+    (per child) every month through Post Office. <br>
+
+
+    <h3> Kishori Shakti Yojna – Adolscents, Strenth and Awareness</h3>
+    An intervention for adolescent girls (11-18 years) the Kishori Shakti Yojana (KSY) was launched in 2000-01 as part
+    of the ICDS scheme. Kishori Shakti Yojana being implemented through Anganwadi Centres in both rural and urban areas.
+    The scheme aims at breaking the intergenerational life-cycle of nutritional and gender disadvantage and providing a
+    supportive environment for self-development. The objectives of the Scheme are to improve the nutritional and health
+    status of girls in the age group of 11-18 years. A group of ten girls in a batch, who would be expectant mothers in
+    future, are given Health Check up by Anganwadi centres. They are also provided required literacy and numeracy
+    skills, stimulation to social exposure and knowledge to help them improve their decision making skills. The
+    adolescent girls are given home based and vocational skills, awareness on health, hygiene, nutrition, family
+    welfare, home management and child care guidance with measures to facilitate marrying after marriage age of 18
+    years. They are encouraged for productive and constructive activities for their own development as well as for their
+    family.
+
+
+    <h3> Balika Samruddhi Yojna – Girl Child Development :</h3>
+    WCD initiates Balika Samruddhi Yojna to change negative family and community attitudes towards the girl child at
+    birth and towards her mother, to improve enrolment and retention of girl children in schools, to raise the marriage
+    age of girls and to assist girls to socio-economic-educational upliftment. The Anganwadi (Kindergarten) workers
+    provide aid to open any nationalized Bank or Post Office Savings account with Rs.500/- to new born girls born to
+    families after August 15, 1997. While getting education, a sum of Rs.300/- to Rs.1000/- scholarship is added to
+    their account. Till the girl child becomes marriage age or up to 18 years, she is eligible to get the sum.
+
+
+    <h3>Gaurav Nari Niti - Women’s Pride, Gender Equality :</h3>
+    The Government of Gujarat decided to formulate the Nari Gaurav Niti (GEP) in the year 2002. The State has sanctioned
+    and announced the state policy for Gender Equity as ‘Nari Gaurav Niti’. Gujarat Government formulated the Nari
+    Gaurav Niti Policy with a view to create awareness in all its Administrative Departments on the
+    socio-economic-educational and developmental sector of women and benefit them through the policy by active
+    involvement of departments for timely modus operandi. <br><br>
+
+    It consists of action plans and monitoring mechanisms and addresses public as well as private sectors. The
+    autonomous Gender Resource Centre provides technical inputs in implementation and monitoring of the policy at State
+    level. Working groups are formed and a series of deliberations take place on all aspects of gender equity and
+    equality. <br>
+
+
+    <h3> Beti Bachao (Save Girl Child) – MATRU VANDANA YATRA :</h3>
+    Gujarat is suffering from one of the worst outcomes of gender based discrimination, i.e. declining male-female sex
+    ratio. The state average of child sex ratio (0-6 years) declined dramatically from 928 in 1991 to 878 in 2001. To
+    address this issue various efforts are being made, one of the major being the ‘Beti Bachao Campaign’ that was
+    launched by Honorable Chief Minister on the occasion of World Women’s Day in 2005. Gender Resource centre, an
+    autonomous body, was an active partner of the campaign who was involved in documentation and publications with a
+    realization that it could play a vital role in changing the perception of the society in general on such important
+    issue.</p>
+    </p>
+  </div>
+
+
+  <div class="button"><a href="tribal_d">
+      <button type="button" onclick="myfunction()">Registration</button></a>
+  </div>
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="home">Home</a>
+
+        <a href="login">Login</a>
+
+        <a href="scheme-page">Scheme</a>
+
+        <a href="scholarship-page">Scholarship</a>
+
+        <a href="about">About</a>
+
+        <a href="contact">Contact / Feedback</a>
+      </p>
+
+      <p>Tribal Subsidized Scheme Portal Hackathon Project &copy; 2023</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

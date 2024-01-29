@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal Scheme Portal</title>
+</head>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    float: left;
+    padding: 14px 20px;
+    font-size: 16px;
+}
+
+.navbar button:hover {
+    background-color: #555;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+.card {
+      position: relative;
+      width: 90%;
+      height: 150px;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 12px;
+      gap: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      margin-left: 25px;
+      display: inline-block;
+    }
+    .card a{
+        border: none;
+        text-decoration: none;
+        color: #fff;
+    }
+
+</style>
+
+<body>
+    <div class="navbar">
+        <button id="homeBtn" onclick="showContent('home')">Home</button>
+        <button id="schemeBtn" onclick="showContent('scheme')">Scheme</button>
+        <button id="scholarshipBtn" onclick="showContent('scholarship')">Scholarship</button>
+        <button id="backBtn" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="homeContent" class="content">
+        <h2>Home Content</h2>
+        <!-- Add your Home content here -->
+    </div>
+
+    <div id="schemeContent" class="content">
+        <h2>Scheme Content</h2>
+        <!-- Add your Scheme content here -->
+        {% for detail in details %}
+        <div class="card">
+            <a href= "{% url 'admin_details' detail.FirstName%}">      
+          <p>Scheme name :{{detail.scholarship_name}}</p>
+          <p>applicant:{{detail.FirstName}} {{detail.MiddleName}} {{detail.LastName}}</p>
+          <p>Phone no :{{detail.phone}}</p></a>
+        <button>approve</button>
+        <button>reject</button>
+                </div>
+        {% endfor %}
+    </div>
+
+    <div id="scholarshipContent" class="content">
+        <h2>Scholarship Content</h2>
+        <!-- Add your Scholarship content here -->
+        <div class="card">
+            <a href="home">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, odio. Maxime minima adipisci unde quia totam ea voluptatum, excepturi nihil?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt similique ad voluptatum quis repudiandae aliquid enim error assumenda sed ipsa.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A animi, exercitationem alias reprehenderit incidunt est nulla sunt itaque asperiores corrupti ipsam saepe molestiae voluptatum porro ronak  </p></a>
+        </div>
+    </div>
+
+    <script>
+
+function showContent(contentId) {
+    // Hide all content sections
+    const contentSections = document.querySelectorAll('.content');
+    contentSections.forEach((section) => {
+        section.style.display = 'none';
+    });
+
+    // Show the selected content section
+    const selectedContent = document.getElementById(contentId + 'Content');
+    selectedContent.style.display = 'block';
+
+    // Update the "Back" button's visibility
+    const backBtn = document.getElementById('backBtn');
+    if (contentId === 'home') {
+        backBtn.style.display = 'none';
+    } else {
+        backBtn.style.display = 'block';
+    }
+}
+
+function goBack() {
+    showContent('home');
+}
+
+// Initial display
+showContent('home');
+
+
+    </script>
+</body>
+</html>

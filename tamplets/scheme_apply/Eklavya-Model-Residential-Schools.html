@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            display: flex;
+            /* height: 100vh; */
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+        }
+        .container{
+            max-width: 700px;
+            width: 100%;
+            height: 100%;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 5px;
+            /* text-align: center; */
+        }
+        .container .head{
+            text-align: center;
+            padding: 20px;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight: 500;
+            /* position: relative; */
+        }
+        .container .title::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+        }
+        .container form .user-details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+        form .user-details .input-box{
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);
+        }
+        .user-details .input-box .details{
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .user-details .input-box input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .user-details .input-box input:focus,
+        .user-details .input-box input:valid{
+            border-color: #9b59b6;
+        }
+        .gender-details .gender-title{
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .gender-details label{
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 10px;
+        }
+        .gender-details{
+            margin-bottom: 10px;
+        }
+        form button{
+            height: 45px;
+            margin: 45px 15px;
+        }
+        form button{
+            height: 100%;
+            width: 12%;
+            color: black;
+            border: none;
+            outline: none;
+            font-size: 22px;
+            font-weight: 500;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+        }
+        form button:hover{
+            background-image: linear-gradient(to right top,  #27a9f4 , #14fff1);
+        }
+        @media (max-width: 584px){
+            .container{
+                max-width: 100%;
+            }
+            form .user-details .input-box{
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            form .gender-details .category{
+                width: 100%;
+            }
+            .container from .user-details{
+                max-height: 300px;
+                overflow-y: scroll;
+            }
+            .user-details::-webkit-scrollbar{
+                width: 0;
+            }
+        }
+        
+        .container form .user-details .input-boxs-1 label{
+            font-size: 20px;
+            margin-right: 150px;
+        }
+        .container form .user-details .input-boxs-2 label{
+            font-size: 20px;
+            margin-right: 130px;
+        }
+        .container form .user-details .input-boxs-3 label{
+            font-size: 20px;
+            margin-right: 55px;
+        }
+        .container form .user-details .input-boxs-4 label{
+            font-size: 20px;
+            margin-right: 70px;
+        }
+        .container form .user-details .input-boxs-5 label{
+            font-size: 20px;
+            margin-right: 165px;
+        }
+        .container form .user-details .input-boxs-6 label{
+            font-size: 20px;
+            margin-right: 80px;
+        }
+        .container form .user-details .input-boxs-7 label{
+            font-size: 20px;
+            margin-right: 175px;
+        }
+        .container form .user-details .input-boxs-8 label{
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        .container form .user-details .input-boxs-1 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-2 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-3 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-4 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-5 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-6 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-7 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+        .container form .user-details .input-boxs-8 input{
+            font-size: 17px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head"><h2>EKLAVYA MODEL RESIDENTIAL SCHOOL</h2></div>
+        <div class="title">Registration</div>
+        <form action="/eklavya" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" placeholder="Enter your First name" name="FirstName" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Middle Name</span>
+                    <input type="text" placeholder="Enter your Middle name" name="MiddleName" required>
+                </div>            
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input type="text" placeholder="Enter your last name" name="LastName" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" name="Email"required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" name="phone"required
+                    >
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your Password" name="password" required>
+                </div>
+                 <div class="input-box">
+                    <span class="details">DOB</span>
+                    <input type="date" placeholder="Enter your Birth date" name="DOB" required>
+                </div> 
+            </div>
+    
+            <div class="gender-details"> 
+                <span class="gender-title">Gender</span> <br>
+                <input type="radio" name="gender" value="male" id="male"  checked> <label for="" >Male</label>
+                <input type="radio" name="gender" value="female" id="female" ><label for="">Female</label>
+                <input type="radio" name="gender" value="other" ><label for="">Other</label>
+                <!-- <div class="category">
+                    <label for="male">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="female">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="other">
+                        <span class="dot three"></span>
+                        <span class="gender">Other</span>
+                    </label>
+                </div> -->
+            </div>
+            <div class="title">Document</div>
+            <div class="user-details">
+                <div class="input-boxs-1">
+                    <label for="file">Aadhar</label>
+                     <input type="file" name="Aadhar" required> 
+                    
+                </div>
+                <div class="input-boxs-2">
+                    <label for="file">Pan Card</label>
+                     <input type="file" name="Pancard" required> 
+                </div>
+                <div class="input-boxs-3">
+                    <label for="file">Income Certificate</label>
+                     <input type="file" name="Incomecerti" required> 
+                </div>
+                <div class="input-boxs-4">
+                    <label for="file">Caste Certificate</label>
+                     <input type="file" name="Castcerti" required > 
+                </div>
+                <div class="input-boxs-5">
+                    <label for="file">Photo</label>
+                     <input type="file" name="photo" required> 
+                </div>
+                <div class="input-boxs-6">
+                    <label for="file">Birth Certificate</label>
+                     <input type="file" name="Birthcerti" required> 
+                </div>
+                <div class="input-boxs-7">
+                    <label for="file">Sign </label>
+                    <input name="Sign" type="file" id="file" required>
+                </div>
+                <div class="input-boxs-8">
+                    <label for="file">Educational Certificate</label>
+                    <input name="EducationalCerti" type="file" id="file" required>
+                </div>
+            </div>
+        <a href="scheme03"><button type="button">Back</button></a>
+        <button  type="submit" onclick="myfunction()">Submit</button>
+        <!-- <script>
+            function myfunction(){
+                alert("Registration successfull")
+            }
+        </script> -->
+    </form>
+    </div>
+</body>
+</html>
